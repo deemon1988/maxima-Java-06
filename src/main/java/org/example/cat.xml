@@ -1,0 +1,16 @@
+<cat name="Мурзик" breed="Манул" weight="10" isAngry="true"/>
+  <!--  <name>Мурзик</name>
+    <breed>Манул</breed>
+    <weight>10</weight>
+    <isAngry>Сердит</isAngry>-->
+XML, DOM
+XML - текстовый файл размеченный тегами и атрибутами
+xml parser, dom parser(xml->dom)
+JAXB - сопоставление xml объектам (чтение в java из xml)
+XML Schema(XSD) (структура xml) проверить файл на соответствие схеме(данные, тег) (валидный)
+XSLT - язык преобразования (разные xml, теги xml) xml->xml, xml-html(отчёт)
+альтернативы XML - JSON(javascript), YAML(отступы)
+
+        maven repository - project lombok
+maven запускать из той папки где есть pom.xml
+для заупска из cmd -> mvn - lifecicle (mvn compile
