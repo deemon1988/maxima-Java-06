@@ -19,7 +19,7 @@ public class App
 
         //StringBuilder собрать строку в цикле
           //  склеить много строк - Stringformat
-        FileWriter writer = new FileWriter("result.html", false);
+      /*  FileWriter writer = new FileWriter("result.html", false);
 
         String resourcesPath = App.class.getClassLoader().getResources("templates").nextElement().getPath();
 
@@ -38,6 +38,7 @@ public class App
         writer.flush();
         writer.close();
 
-       DynamicPage.createPage("catResult.html");
+       DynamicPage.createPage("catResult.html");*/
+        System.out.println(System.getProperty("os.name"));
     }
 }
