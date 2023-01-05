@@ -1,44 +1,39 @@
 package org.example;
 
-import freemarker.template.Configuration;
-import freemarker.template.Template;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import org.example.config.SpringConfig;
+import org.example.model.Manul;
+import org.example.model.Place;
+import org.example.model.Sphynx;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args ) throws Exception {
+public class App {
+    public static void main(String[] args) throws Exception {
+       System.out.println("Hello Spring!");
+        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-        //StringBuilder собрать строку в цикле
-          //  склеить много строк - Stringformat
-      /*  FileWriter writer = new FileWriter("result.html", false);
+        /*Logistics logistics = context.getBean(Logistics.class);
+        TransportFactory transportFactory = context.getBean(TransportFactory.class);
 
-        String resourcesPath = App.class.getClassLoader().getResources("templates").nextElement().getPath();
+        System.out.println(transportFactory);
+        System.out.println(logistics);*/
 
-        Configuration config = new Configuration(Configuration.VERSION_2_3_31);
-        config.setDirectoryForTemplateLoading(new File(resourcesPath));
-        config.setDefaultEncoding("UTF-8");
-        Map root = new HashMap<>();
-        root.put("title", "Данные кота");
+        /*Manul murka = context.getBean(Manul.class);
+       Manul murzik= context.getBean(Manul.class);
+        Sphynx ramzes= context.getBean(Sphynx.class);
 
-        Cat cat = new Cat("Мурзик",5,true);
-        root.put("cat", cat);
+        System.out.println(murzik);
+        System.out.println(ramzes);
+        System.out.println(murka);
 
-        Template template = config.getTemplate("index.html");
-        template.process(root, writer);
+        murka.setName("Мурка");
+        System.out.println(murzik.getName());
+        System.out.println(murka.getName());
+        System.out.println(murzik==murka);*/
 
-        writer.flush();
-        writer.close();
-
-       DynamicPage.createPage("catResult.html");*/
-        System.out.println(System.getProperty("os.name"));
+       Place place = context.getBean(Place.class);
+        System.out.println(place.getCat1());
+        System.out.println(place.getCat2());
     }
 }
