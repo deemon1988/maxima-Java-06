@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Place {
-//@Autowired
+    //@Autowired
   /* @Autowired private Manul cat1;                    // 3 вариант внедрение ч\з св-во
    @Autowired private  Sphynx cat2;
 
@@ -30,8 +30,8 @@ public class Place {
         this.cat = cat;
     }*/
     @Autowired private Cat cat1;
-    @Autowired @Qualifier("hairless")
-    private  Cat cat2;            // не приоритетный Бин, явное указание
+    @Autowired @Qualifier("hairless")                   // не приоритетный Бин, явное указание
+    private  Cat cat2;
 
     public Cat getCat2() {
         return cat2;

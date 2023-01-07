@@ -8,15 +8,15 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-//@Scope("prototype")             // по умолчанию Bean - синглтон
+//@Scope("prototype")     // по умолчанию Bean - синглтон
 @Primary
 @PropertySource(value = "classpath:application.properties" , encoding = "UTF-8")  //src\main\resources прописать вручную
 public class Manul implements Cat{
 
     @Value("${manul.name}")             // указание ч\з properties файл
-    private String name ; // = "Мурзик";
+    private String name ;               // = "Мурзик";
     @Value("${manul.weight}")
-    private int weight;  // = 10;
+    private int weight;                 // = 10;
 
     @Override
     public String toString() {

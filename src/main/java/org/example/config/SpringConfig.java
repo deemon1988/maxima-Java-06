@@ -9,14 +9,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "org.example")
 public class SpringConfig {
-    /*@Bean
+    @Bean
     public Logistics logistics() {
         return new Logistics();
-    }*/
+    }
 
     @Bean("hairless")
     public Sphynx sphynx() {
         return new Sphynx();
     }
-
 }
