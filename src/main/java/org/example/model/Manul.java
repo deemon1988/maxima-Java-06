@@ -7,8 +7,11 @@ import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-//@Scope("prototype")     // по умолчанию Bean - синглтон
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+//@Component
+@Scope("prototype")     // по умолчанию Bean - синглтон
 @Primary
 @PropertySource(value = "classpath:application.properties" , encoding = "UTF-8")  //src\main\resources прописать вручную
 public class Manul implements Cat{
@@ -32,5 +35,14 @@ public class Manul implements Cat{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @PostConstruct
+    public void init(){
+        System.out.println("Манул пришел");
+    }
+    @PreDestroy
+    public void destroy(){
+        System.out.println("Манул ушел");
     }
 }
