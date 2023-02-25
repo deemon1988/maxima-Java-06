@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 
 //@Component
 public class Place {
-    //@Autowired
-  /* @Autowired private Manul cat1;                    // 3 вариант внедрение ч\з св-во
-   @Autowired private  Sphynx cat2;
+
+  /* @Autowired private Manul cat1;       // внедрение через св-во (самый худший, самый медленный, работает через рефлексию (Reflection API)
+     @Autowired private  Sphynx cat2;     // с точки зрения развертывания ненужного кода, можно @Autowired только свойство
 
     public Sphynx getCat2() {
         return cat2;
@@ -18,20 +18,23 @@ public class Place {
         return cat1;
     }*/
 
-   /* @Autowired                              // внедрение ч\з Сеттер
+   /* @Autowired                          // внедрение через Сеттер  (самый неочевидный способ)
     public void setCat(Manul cat) {
         this.cat = cat;
     }*/
 
-    public Place(){}
-                                                // если конструктор не единственный нужно указывать @Autowired
-    /* @Autowired                                     // у Бина должен быть коннструктор по умолчанию
-    public Place(Manul cat) {                     // @Autowired   внедрение ч\з конструктор
-        this.cat = cat;
-    }*/
-    @Autowired private Cat cat1;
-    @Autowired @Qualifier("hairless")                   // не приоритетный Бин, явное указание
-    private  Cat cat2;
+    public Place() {                       // у Бина должен быть коннструктор по умолчанию
+    }
+
+    /*    @Autowired                       //  внедрение через конструктор (самый быстрый способ)
+       public Place(Manul cat) {           //  если конструктор не единственный нужно указывать @Autowired
+           this.cat = cat;
+       }*/
+    @Autowired
+    private Cat cat1;
+    @Autowired
+    @Qualifier("hairless")                   // не приоритетный Бин, явное указание
+    private Cat cat2;
 
     public Cat getCat2() {
         return cat2;
