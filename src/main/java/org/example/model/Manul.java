@@ -10,16 +10,16 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-//@Component
+@Component
 @Scope("prototype")     // по умолчанию Bean - синглтон
 @Primary
-@PropertySource(value = "classpath:application.properties" , encoding = "UTF-8")  //src\main\resources прописать вручную
+@PropertySource(value = "classpath:application.properties" , encoding = "UTF-8")
 public class Manul implements Cat{
 
-    @Value("${manul.name}")             // указание ч\з properties файл
-    private String name ;               // = "Мурзик";
+    @Value("${manul.name}")             // свойства бина указаны через properties файл
+    private String name ;
     @Value("${manul.weight}")
-    private int weight;                 // = 10;
+    private int weight;
 
     @Override
     public String toString() {

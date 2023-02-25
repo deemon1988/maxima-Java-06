@@ -14,7 +14,7 @@ public class SpringConfig {
         return new Logistics();
     }
 
-   // @Bean(value = "hairless", initMethod = "init", destroyMethod = "destroy")
+    @Bean(value = "hairless", initMethod = "init", destroyMethod = "destroy")
     public Sphynx sphynx() {
         return new Sphynx();
     }
